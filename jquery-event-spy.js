@@ -8,7 +8,7 @@
 	var counterId = triggerId + ".count";
 	
 	function loggingTrigger() {
-		var originalTrigger = this[triggerId];jq
+		var originalTrigger = this[triggerId];
 		var count = this[counterId];
 		if (count === undefined) {
 			count = 0;
