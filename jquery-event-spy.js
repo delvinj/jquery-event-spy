@@ -43,16 +43,14 @@
                 scope.jQuery.event.trigger = loggingTrigger.bind(scope);
             }
         } catch (x) {
-            (window.console && console.error && console.error(x));
+            (window.console && console.error && console.error("Unable to install for scope", x.message));
         }
     }
     
-    if (window.frames.length >= 1) {
-        for (var j=0; j < window.frames.length; ++j) {
-            installOrRemove(window.frames[j]);
-        }
-    } else {
-        installOrRemove(window);
+    installOrRemove(window);
+    
+    for (var j=0; j < window.frames.length; ++j) {
+        installOrRemove(window.frames[j]);
     }
     
 })();
