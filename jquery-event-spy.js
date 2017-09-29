@@ -15,9 +15,9 @@
         }
         /* Go fishing for some common event types/info. */
         var type, arr;
-        if (arguments[0] instanceof this.jQuery.Event) {
+        if (arguments[0] instanceof this.jQuery.Event || (arguments[0] && arguments[0].type)) {
             type = arguments[0].type || "jQuery.Event";
-            arr = [].slice.call(arguments, 1);
+            arr = [].slice.call(arguments);
         } else if (arguments[0] && arguments[0].constructor === String) {
             type = arguments[0];
             arr = [].slice.call(arguments, 1);
